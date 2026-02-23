@@ -2,7 +2,6 @@
  * ANTHERA Systems — Contact Page
  * Design: Atmospheric Dark Elegance | i18n + theme aware
  */
-
 import { useState } from "react";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
@@ -16,7 +15,6 @@ export default function Contact() {
   const { theme } = useTheme();
   const { t } = useLanguage();
   const isDark = theme === "dark";
-
   const bg2 = isDark ? "#0f172a" : "#f1f5f9";
   const textPrimary = isDark ? "text-white" : "text-[#0f172a]";
   const textSecondary = isDark ? "text-[#94a3b8]" : "text-[#64748b]";
@@ -34,16 +32,35 @@ export default function Contact() {
     interest: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast.error(t("contact.form.error"));
       return;
     }
-    setSubmitted(true);
-    toast.success(t("contact.form.toast"));
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "contact",
+          ...formData,
+        }).toString(),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        toast.success(t("contact.form.toast"));
+      } else {
+        throw new Error("Netlify form submission failed");
+      }
+    } catch (error) {
+      toast.error("Error sending message. Please try again.");
+    }
   };
 
   const handleChange = (
@@ -60,7 +77,6 @@ export default function Contact() {
           <img src={HERO_BG} alt="" className="w-full h-full object-cover" />
           <div className={`absolute inset-0 ${isDark ? "bg-gradient-to-b from-[#020617]/80 via-[#020617]/60 to-[#020617]" : "bg-gradient-to-b from-white/80 via-white/60 to-white"}`} />
         </div>
-
         <div className="container relative z-10 pt-32 pb-16">
           <div className="max-w-4xl">
             <AnimatedSection>
@@ -68,7 +84,6 @@ export default function Contact() {
                 {t("contact.hero.title")}
               </h1>
             </AnimatedSection>
-
             <AnimatedSection delay={0.15}>
               <p className={`text-lg md:text-xl leading-relaxed max-w-2xl ${textSecondary}`}>
                 {t("contact.hero.desc")}
@@ -107,7 +122,16 @@ export default function Contact() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true" 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                  >
+                    {/* Hidden input for Netlify bot protection and form identification */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className={`block text-sm font-medium mb-2 ${textSecondary}`}>
@@ -120,6 +144,7 @@ export default function Contact() {
                           onChange={handleChange}
                           className={inputClasses}
                           placeholder={t("contact.form.name.ph")}
+                          required
                         />
                       </div>
                       <div>
@@ -133,10 +158,10 @@ export default function Contact() {
                           onChange={handleChange}
                           className={inputClasses}
                           placeholder={t("contact.form.email.ph")}
+                          required
                         />
                       </div>
                     </div>
-
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className={`block text-sm font-medium mb-2 ${textSecondary}`}>
@@ -170,7 +195,6 @@ export default function Contact() {
                         </select>
                       </div>
                     </div>
-
                     <div>
                       <label className={`block text-sm font-medium mb-2 ${textSecondary}`}>
                         {t("contact.form.message")} *
@@ -182,9 +206,9 @@ export default function Contact() {
                         rows={5}
                         className={`${inputClasses} resize-none`}
                         placeholder={t("contact.form.message.ph")}
+                        required
                       />
                     </div>
-
                     <button
                       type="submit"
                       className="btn-gradient w-full py-3.5 rounded-lg font-display font-semibold text-sm"
@@ -195,7 +219,6 @@ export default function Contact() {
                 )}
               </div>
             </AnimatedSection>
-
             {/* Info sidebar */}
             <AnimatedSection className="lg:col-span-2" direction="right">
               <div className="space-y-6">
@@ -212,7 +235,6 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-
                 <div className="glass-card p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#6366f1]/10 shrink-0">
@@ -224,7 +246,6 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-
                 <div className="glass-card p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#06b6d4]/10 shrink-0">
@@ -236,7 +257,6 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-
                 <div className="glass-card p-6">
                   <p className={`text-sm leading-relaxed ${textSecondary}`}>
                     {t("contact.info.direct")}{" "}
