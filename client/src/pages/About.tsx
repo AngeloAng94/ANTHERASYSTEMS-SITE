@@ -2,13 +2,13 @@
  * ANTHERA Systems — About Page
  * Design: Atmospheric Dark Elegance | i18n + theme aware
  */
-
 import { Shield, Wrench, Eye, Accessibility } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/106888006/nEIezZKFsZWpzyOl.png";
+const PROFILE_PHOTO = "https://github.com/AngeloAng94.png";
 
 const skills = ["Cloud Infrastructure", "ServiceNow/CMDB", "Python/FastAPI", "React", "MongoDB"];
 
@@ -28,7 +28,6 @@ export default function About() {
     { icon: Eye, title: t("about.v3.title"), desc: t("about.v3.desc"), color: "#6366f1" },
     { icon: Accessibility, title: t("about.v4.title"), desc: t("about.v4.desc"), color: "#3b82f6" },
   ];
-
   return (
     <div>
       {/* ── HERO ── */}
@@ -37,7 +36,6 @@ export default function About() {
           <img src={HERO_BG} alt="" className="w-full h-full object-cover" />
           <div className={`absolute inset-0 ${isDark ? "bg-gradient-to-b from-[#020617]/80 via-[#020617]/60 to-[#020617]" : "bg-gradient-to-b from-white/80 via-white/60 to-white"}`} />
         </div>
-
         <div className="container relative z-10 pt-32 pb-20">
           <div className="max-w-4xl">
             <AnimatedSection>
@@ -46,7 +44,6 @@ export default function About() {
                 <span className="gradient-text-blue">{t("about.hero.title2")}</span>
               </h1>
             </AnimatedSection>
-
             <AnimatedSection delay={0.15}>
               <p className={`text-lg md:text-xl leading-relaxed max-w-2xl ${textSecondary}`}>
                 {t("about.hero.desc")}
@@ -55,7 +52,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* ── MISSIONE ── */}
       <section className="py-24 md:py-32" style={{ background: bg2 }}>
         <div className="container">
@@ -65,7 +61,6 @@ export default function About() {
                 {t("about.mission.title")} <span className="gradient-text-blue">{t("about.mission.title2")}</span>
               </h2>
             </AnimatedSection>
-
             <AnimatedSection delay={0.1}>
               <div className="glass-card p-8 md:p-12">
                 <p className={`text-lg md:text-xl leading-relaxed ${isDark ? "text-[#c8d0dc]" : "text-[#475569]"}`}>
@@ -76,7 +71,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* ── VALORI ── */}
       <section className="py-24 md:py-32" style={{ background: bg1 }}>
         <div className="container">
@@ -85,7 +79,6 @@ export default function About() {
               {t("about.values.title")}
             </h2>
           </AnimatedSection>
-
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto" staggerDelay={0.12}>
             {values.map((v) => (
               <StaggerItem key={v.title}>
@@ -101,7 +94,6 @@ export default function About() {
           </StaggerContainer>
         </div>
       </section>
-
       {/* ── TEAM ── */}
       <section className="py-24 md:py-32" style={{ background: bg2 }}>
         <div className="container">
@@ -110,13 +102,14 @@ export default function About() {
               {t("about.team.title")}
             </h2>
           </AnimatedSection>
-
           <AnimatedSection className="max-w-lg mx-auto">
             <div className="glass-card p-8 text-center">
-              <div className="w-24 h-24 rounded-full mx-auto mb-6 bg-gradient-to-br from-[#3b82f6] to-[#6366f1] flex items-center justify-center">
-                <span className="font-display font-bold text-3xl text-white">A</span>
-              </div>
-              <h3 className={`font-display font-bold text-xl mb-1 ${textPrimary}`}>Angelo A.</h3>
+              <img
+                src={PROFILE_PHOTO}
+                alt="Angelo Anglani"
+                className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-2 border-[#3b82f6]/40"
+              />
+              <h3 className={`font-display font-bold text-xl mb-1 ${textPrimary}`}>Angelo Anglani</h3>
               <p className="text-[#3b82f6] font-mono-brand text-sm mb-6">{t("about.team.role")}</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {skills.map((skill) => (
