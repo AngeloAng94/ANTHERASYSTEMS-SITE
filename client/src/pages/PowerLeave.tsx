@@ -98,7 +98,7 @@ export default function PowerLeave() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" staggerDelay={0.1}>
             {features.map((f) => (
               <StaggerItem key={f.title}>
-                <div className="glass-card-hover p-7 h-full">
+                <div className="glass-card-hover p-7 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 bg-[#3b82f6]/10">
                     <f.icon className="w-5 h-5 text-[#3b82f6]" />
                   </div>
@@ -123,8 +123,7 @@ export default function PowerLeave() {
                 </span>
               ))}
             </div>
-          </AnimatedSection>
-        </div>
+className="glass-card-hover p-7 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>        </div>
       </section>
 
       {/* ── PRICING ── */}
@@ -140,7 +139,7 @@ export default function PowerLeave() {
               <StaggerItem key={plan.name}>
                 <div className={`glass-card p-8 text-center h-full flex flex-col ${
                   plan.highlighted ? "border-[#3b82f6]/40 shadow-[0_0_40px_rgba(59,130,246,0.1)]" : ""
-                }`}>
+                }`} style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   {plan.highlighted && (
                     <span className="font-mono-brand text-[10px] tracking-wider text-[#3b82f6] bg-[#3b82f6]/10 px-3 py-1 rounded-md self-center mb-4 border border-[#3b82f6]/20">
                       {t("pl.pricing.recommended")}
