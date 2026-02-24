@@ -142,7 +142,7 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto" staggerDelay={0.12}>
             {whyCards.map((card) => (
               <StaggerItem key={card.title}>
-                <div className="glass-card-hover p-8 h-full">
+                <div className="glass-card-hover p-8 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)', color: isDark ? '#ffffff' : '#0f172a' }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: `${card.color}15` }}>
                     <card.icon className="w-6 h-6" style={{ color: card.color }} />
                   </div>
@@ -166,7 +166,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <AnimatedSection direction="left">
               <Link href="/powerleave" className="block group">
-                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]">
+                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <div className="p-8 md:p-10">
                     <div className="flex items-start justify-between mb-6">
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#3b82f6] bg-[#3b82f6]/10 px-3 py-1.5 rounded-md">{t("home.products.pl.tag")}</span>
@@ -191,7 +191,7 @@ export default function Home() {
 
             <AnimatedSection direction="right">
               <Link href="/govern-ai" className="block group">
-                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#6366f1]/30 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)]">
+                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#6366f1]/30 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <div className="p-8 md:p-10">
                     <div className="flex items-start justify-between mb-6">
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#6366f1] bg-[#6366f1]/10 px-3 py-1.5 rounded-md">{t("home.products.gov.tag")}</span>
@@ -233,7 +233,7 @@ export default function Home() {
               { value: "6", suffix: "", label: t("home.stats.stat3") },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
-                <div className="glass-card p-8 text-center">
+                <div className="glass-card p-8 text-center" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <Counter target={stat.value} suffix={stat.suffix} />
                   <p className={`text-sm mt-4 leading-relaxed ${textSecondary}`}>{stat.label}</p>
                 </div>
