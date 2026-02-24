@@ -123,7 +123,8 @@ export default function PowerLeave() {
                 </span>
               ))}
             </div>
-className="glass-card-hover p-7 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>        </div>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* ── PRICING ── */}
