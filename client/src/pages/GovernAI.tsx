@@ -114,7 +114,7 @@ export default function GovernAI() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" staggerDelay={0.1}>
             {features.map((f) => (
               <StaggerItem key={f.title}>
-                <div className="glass-card-hover p-7 h-full" style={{ borderColor: 'rgba(99,102,241,0.08)' }}>
+                <div className="glass-card-hover p-7 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(99,102,241,0.3)' : '1px solid rgba(99,102,241,0.15)' }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 bg-[#6366f1]/10">
                     <f.icon className="w-5 h-5 text-[#6366f1]" />
                   </div>
@@ -140,7 +140,7 @@ export default function GovernAI() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto" staggerDelay={0.08}>
             {standards.map((std) => (
               <StaggerItem key={std.name}>
-                <div className="glass-card p-6 h-full">
+                <div className="glass-card p-6 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <div className="w-3 h-3 rounded-full mb-4" style={{ background: std.color, boxShadow: `0 0 12px ${std.color}60` }} />
                   <h3 className="font-display font-bold text-lg mb-1" style={{ color: std.color }}>{std.name}</h3>
                   <p className={`text-sm ${textSecondary}`}>{std.desc}</p>
@@ -180,7 +180,7 @@ export default function GovernAI() {
               <StaggerItem key={plan.name}>
                 <div className={`glass-card p-8 text-center h-full flex flex-col ${
                   plan.highlighted ? "border-[#6366f1]/40 shadow-[0_0_40px_rgba(99,102,241,0.1)]" : ""
-                }`}>
+                }`} style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(99,102,241,0.3)' : '1px solid rgba(99,102,241,0.15)' }}>
                   {plan.highlighted && (
                     <span className="font-mono-brand text-[10px] tracking-wider text-[#6366f1] bg-[#6366f1]/10 px-3 py-1 rounded-md self-center mb-4 border border-[#6366f1]/20">
                       {t("pl.pricing.recommended")}
