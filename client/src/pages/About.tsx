@@ -62,7 +62,7 @@ export default function About() {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="glass-card p-8 md:p-12">
+              <div className="glass-card p-8 md:p-12" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                 <p className={`text-lg md:text-xl leading-relaxed ${isDark ? "text-[#c8d0dc]" : "text-[#475569]"}`}>
                   {t("about.mission.text")}
                 </p>
@@ -82,7 +82,7 @@ export default function About() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto" staggerDelay={0.12}>
             {values.map((v) => (
               <StaggerItem key={v.title}>
-                <div className="glass-card-hover p-8 h-full">
+                <div className="glass-card-hover p-8 h-full" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: `${v.color}15` }}>
                     <v.icon className="w-6 h-6" style={{ color: v.color }} />
                   </div>
@@ -103,7 +103,7 @@ export default function About() {
             </h2>
           </AnimatedSection>
           <AnimatedSection className="max-w-lg mx-auto">
-            <div className="glass-card p-8 text-center">
+            <div className="glass-card p-8 text-center" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
               <img
                 src={PROFILE_PHOTO}
                 alt="Angelo Anglani"
