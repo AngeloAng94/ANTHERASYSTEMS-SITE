@@ -99,7 +99,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
             {/* Form */}
             <AnimatedSection className="lg:col-span-3" direction="left">
-              <div className="glass-card p-8 md:p-10">
+              <div className="glass-card p-8 md:p-10" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(0,0,0,0.1)' }}">
                 {submitted ? (
                   <div className="text-center py-16">
                     <div className="w-16 h-16 rounded-full mx-auto mb-6 bg-[#3b82f6]/20 flex items-center justify-center">
@@ -222,7 +222,7 @@ export default function Contact() {
             {/* Info sidebar */}
             <AnimatedSection className="lg:col-span-2" direction="right">
               <div className="space-y-6">
-                <div className="glass-card p-6">
+                <div className="glass-card p-6" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(0,0,0,0.1)' }}">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#3b82f6]/10 shrink-0">
                       <Mail className="w-5 h-5 text-[#3b82f6]" />
@@ -235,7 +235,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                <div className="glass-card p-6">
+                <div className="glass-card p-6" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(0,0,0,0.1)' }}">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#6366f1]/10 shrink-0">
                       <MapPin className="w-5 h-5 text-[#6366f1]" />
@@ -246,7 +246,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                <div className="glass-card p-6">
+                <div className="glass-card p-6" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(0,0,0,0.1)' }}">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#06b6d4]/10 shrink-0">
                       <Clock className="w-5 h-5 text-[#06b6d4]" />
@@ -257,7 +257,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                <div className="glass-card p-6">
+                <div className="glass-card p-6" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(0,0,0,0.1)' }}">
                   <p className={`text-sm leading-relaxed ${textSecondary}`}>
                     {t("contact.info.direct")}{" "}
                     <a href="mailto:info@antherasystems.com" className="text-[#3b82f6] hover:underline">
