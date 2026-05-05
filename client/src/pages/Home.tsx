@@ -6,7 +6,7 @@
 
 import { Link } from "wouter";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Shield, Zap, CheckCircle, Users } from "lucide-react";
+import { Shield, Zap, CheckCircle, Users, GraduationCap } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -163,20 +163,20 @@ export default function Home() {
             <p className={`text-lg max-w-2xl mx-auto ${textSecondary}`}>{t("home.products.desc")}</p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <AnimatedSection direction="left">
               <Link href="/powerleave" className="block group">
                 <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
-                  <div className="p-8 md:p-10">
-                    <div className="flex items-start justify-between mb-6">
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-start justify-between mb-5">
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#3b82f6] bg-[#3b82f6]/10 px-3 py-1.5 rounded-md">{t("home.products.pl.tag")}</span>
                     </div>
-                    <div className="flex items-center gap-4 mb-5">
-                      <img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-16 w-auto rounded-lg" />
-                      <h3 className={`font-display font-bold text-2xl ${textPrimary}`}>{t("home.products.pl.name")}</h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-14 w-auto rounded-lg" />
+                      <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.pl.name")}</h3>
                     </div>
-                    <p className={`text-sm leading-relaxed mb-6 ${textSecondary}`}>{t("home.products.pl.desc")}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.pl.desc")}</p>
+                    <div className="flex flex-wrap gap-2 mb-5">
                       {["React 18", "FastAPI", "MongoDB", "JWT"].map((tag) => (
                         <span key={tag} className="font-mono-brand text-[10px] px-2.5 py-1 rounded bg-[#3b82f6]/10 text-[#3b82f6] border border-[#3b82f6]/20">{tag}</span>
                       ))}
@@ -189,25 +189,55 @@ export default function Home() {
               </Link>
             </AnimatedSection>
 
-            <AnimatedSection direction="right">
+            <AnimatedSection>
               <Link href="/govern-ai" className="block group">
                 <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#6366f1]/30 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
-                  <div className="p-8 md:p-10">
-                    <div className="flex items-start justify-between mb-6">
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-start justify-between mb-5">
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#6366f1] bg-[#6366f1]/10 px-3 py-1.5 rounded-md">{t("home.products.gov.tag")}</span>
                     </div>
-                    <div className="flex items-center gap-4 mb-5">
-                      <img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-16 w-auto rounded-lg" />
-                      <h3 className={`font-display font-bold text-2xl ${textPrimary}`}>{t("home.products.gov.name")}</h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-14 w-auto rounded-lg" />
+                      <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.gov.name")}</h3>
                     </div>
-                    <p className={`text-sm leading-relaxed mb-6 ${textSecondary}`}>{t("home.products.gov.desc")}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.gov.desc")}</p>
+                    <div className="flex flex-wrap gap-2 mb-5">
                       {["FastAPI", "React", "MongoDB", "GPT"].map((tag) => (
                         <span key={tag} className="font-mono-brand text-[10px] px-2.5 py-1 rounded bg-[#6366f1]/10 text-[#6366f1] border border-[#6366f1]/20">{tag}</span>
                       ))}
                     </div>
                     <span className="text-[#6366f1] font-display font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                       {t("home.products.gov.cta")} <span className="text-lg">→</span>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right">
+              <Link href="/antheralearn" className="block group">
+                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#06b6d4]/30 hover:shadow-[0_0_40px_rgba(6,182,212,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-start justify-between mb-5">
+                      <span className="font-mono-brand text-[11px] tracking-wider text-[#06b6d4] bg-[#06b6d4]/10 px-3 py-1.5 rounded-md">{t("home.products.al.tag")}</span>
+                    </div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span
+                        className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
+                        style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }}
+                      >
+                        <GraduationCap className="w-7 h-7 text-white" />
+                      </span>
+                      <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.al.name")}</h3>
+                    </div>
+                    <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.al.desc")}</p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {["Claude AI", "FastAPI", "React", "IT/EN"].map((tag) => (
+                        <span key={tag} className="font-mono-brand text-[10px] px-2.5 py-1 rounded bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/20">{tag}</span>
+                      ))}
+                    </div>
+                    <span className="text-[#06b6d4] font-display font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                      {t("home.products.al.cta")} <span className="text-lg">→</span>
                     </span>
                   </div>
                 </div>
