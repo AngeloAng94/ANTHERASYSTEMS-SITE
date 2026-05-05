@@ -35,6 +35,7 @@ export default function Navbar() {
   const products = [
     { href: "/powerleave", label: "PowerLeave", desc: "HR & Team Management" },
     { href: "/govern-ai", label: "GOVERN.AI", desc: "AI Governance" },
+    { href: "/antheralearn", label: "AntheraLearn", desc: "AI Education" },
   ];
 
   const isActive = (href: string) => location === href;
@@ -92,7 +93,7 @@ export default function Navbar() {
           >
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 ${
-                location.startsWith("/powerleave") || location.startsWith("/govern-ai")
+                location.startsWith("/powerleave") || location.startsWith("/govern-ai") || location.startsWith("/antheralearn") || location.startsWith("/anthera-learn")
                   ? isDark ? "text-white bg-white/[0.08]" : "text-[#0f172a] bg-black/[0.06]"
                   : isDark ? "text-[#94a3b8] hover:text-white hover:bg-white/[0.04]" : "text-[#64748b] hover:text-[#0f172a] hover:bg-black/[0.04]"
               }`}
