@@ -56,6 +56,11 @@ export default function Footer() {
                   GOVERN.AI
                 </Link>
               </li>
+              <li>
+                <Link href="/antheralearn" className={`text-sm hover:text-[#06b6d4] transition-colors ${textSecondary}`}>
+                  AntheraLearn
+                </Link>
+              </li>
             </ul>
           </div>
 
