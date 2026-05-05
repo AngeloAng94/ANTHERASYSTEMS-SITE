@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import PowerLeave from "./pages/PowerLeave";
 import GovernAI from "./pages/GovernAI";
+import AntheraLearn from "./pages/AntheraLearn";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
@@ -20,6 +21,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/powerleave" component={PowerLeave} />
       <Route path="/govern-ai" component={GovernAI} />
+      <Route path="/antheralearn" component={AntheraLearn} />
+      <Route path="/anthera-learn" component={AntheraLearn} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
