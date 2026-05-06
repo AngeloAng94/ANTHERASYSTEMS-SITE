@@ -89,8 +89,8 @@ export default function Footer() {
               {t("footer.legal")}
             </h4>
             <ul className="space-y-3">
-              <li><span className={`text-sm cursor-default ${textMuted}`}>Privacy Policy</span></li>
-              <li><span className={`text-sm cursor-default ${textMuted}`}>Terms of Service</span></li>
+                            <li><Link href="/privacy-policy" className={`text-sm hover:text-[#3b82f6] transition-colors ${textSecondary}`}>Privacy Policy</Link></li>
+                            <li><Link href="/terms-of-service" className={`text-sm hover:text-[#3b82f6] transition-colors ${textSecondary}`}>Terms of Service</Link></li>
             </ul>
           </div>
         </div>
