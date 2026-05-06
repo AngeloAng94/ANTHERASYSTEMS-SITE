@@ -11,6 +11,8 @@ import GovernAI from "./pages/GovernAI";
 import AntheraLearn from "./pages/AntheraLearn";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -25,6 +27,8 @@ function Router() {
       <Route path="/anthera-learn" component={AntheraLearn} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
