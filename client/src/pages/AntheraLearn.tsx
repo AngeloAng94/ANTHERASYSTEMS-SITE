@@ -22,6 +22,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import ProductLogo from "@/components/ProductLogo";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -169,13 +170,20 @@ export default function AntheraLearn() {
             <div>
               <AnimatedSection>
               <span className="inline-flex items-center gap-3 mb-6 flex-wrap">
-                <span
-                  className="inline-flex items-center justify-center h-12 w-12 rounded-xl text-white font-display font-bold text-xl"
-                  style={{ background: `linear-gradient(135deg, ${ACCENT}, ${ACCENT_2})` }}
-                  data-testid="al-hero-logo"
-                >
-                  <GraduationCap className="w-6 h-6" />
-                </span>
+                <ProductLogo
+                  src="/products/antheralearn.svg"
+                  alt="AntheraLearn"
+                  className="h-12 w-12 rounded-xl shrink-0 object-contain"
+                  fallback={
+                    <span
+                      className="inline-flex items-center justify-center h-12 w-12 rounded-xl text-white font-display font-bold text-xl"
+                      style={{ background: `linear-gradient(135deg, ${ACCENT}, ${ACCENT_2})` }}
+                      data-testid="al-hero-logo"
+                    >
+                      <GraduationCap className="w-6 h-6" />
+                    </span>
+                  }
+                />
                 <span
                   className="font-mono-brand text-[11px] tracking-wider px-3 py-1.5 rounded-md border"
                   style={{

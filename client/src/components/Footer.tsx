@@ -2,7 +2,8 @@ import { Link } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/106888006/sVLDfOfljKNesubS.png";
+// Official ANTHERA vector mark (client/public/anthera-mark.svg)
+const LOGO_URL = "/anthera-mark.svg";
 
 export default function Footer() {
   const { theme } = useTheme();
