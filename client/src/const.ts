@@ -1,5 +1,8 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
+// Live landing page for the agentAIer product (built separately with Freebuff).
+export const AGENTAIER_URL = "https://witty-llamas-wonder.freebuff.dev/";
+
 // Generate login URL at runtime so redirect URI reflects the current origin.
 export const getLoginUrl = () => {
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;

@@ -61,6 +61,11 @@ export default function Footer() {
                   AntheraLearn
                 </Link>
               </li>
+              <li>
+                <Link href="/agent-aier" className={`text-sm hover:text-[#10b981] transition-colors ${textSecondary}`}>
+                  agentAIer
+                </Link>
+              </li>
             </ul>
           </div>
 

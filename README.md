@@ -8,6 +8,7 @@ Official website for ANTHERA Systems — a European software company building mo
 
 - **PowerLeave** — HR & Team Management platform for leave and absence management
 - **GOVERN.AI** — Sovereign Control Plane for enterprise AI agent governance
+- **agentAIer** — AI Agent Operating System ([live landing](https://witty-llamas-wonder.freebuff.dev/))
 
 ## Tech Stack
 

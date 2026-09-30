@@ -6,7 +6,7 @@
 
 import { Link } from "wouter";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Shield, Zap, CheckCircle, Users, GraduationCap } from "lucide-react";
+import { Shield, Zap, CheckCircle, Users, GraduationCap, Bot } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -163,7 +163,7 @@ export default function Home() {
             <p className={`text-lg max-w-2xl mx-auto ${textSecondary}`}>{t("home.products.desc")}</p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             <AnimatedSection direction="left">
               <Link href="/powerleave" className="block group">
                 <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
@@ -238,6 +238,36 @@ export default function Home() {
                     </div>
                     <span className="text-[#06b6d4] font-display font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                       {t("home.products.al.cta")} <span className="text-lg">→</span>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right">
+              <Link href="/agent-aier" className="block group">
+                <div className="glass-card overflow-hidden h-full transition-all duration-300 hover:border-[#10b981]/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)]" style={{ background: isDark ? 'rgba(2,6,23,0.9)' : 'rgba(255,255,255,0.9)', border: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.08)' }}>
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-start justify-between mb-5">
+                      <span className="font-mono-brand text-[11px] tracking-wider text-[#10b981] bg-[#10b981]/10 px-3 py-1.5 rounded-md">{t("home.products.aa.tag")}</span>
+                    </div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span
+                        className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
+                        style={{ background: 'linear-gradient(135deg, #10b981, #14b8a6)' }}
+                      >
+                        <Bot className="w-7 h-7 text-white" />
+                      </span>
+                      <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.aa.name")}</h3>
+                    </div>
+                    <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.aa.desc")}</p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {["Claude AI", "FastAPI", "React", "No-code"].map((tag) => (
+                        <span key={tag} className="font-mono-brand text-[10px] px-2.5 py-1 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20">{tag}</span>
+                      ))}
+                    </div>
+                    <span className="text-[#10b981] font-display font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                      {t("home.products.aa.cta")} <span className="text-lg">→</span>
                     </span>
                   </div>
                 </div>
