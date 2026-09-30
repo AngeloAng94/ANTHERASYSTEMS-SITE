@@ -190,6 +190,7 @@ export default function Contact() {
                           <option value="" style={{ background: selectBg }}>{t("contact.form.interest.ph")}</option>
                           <option value="powerleave" style={{ background: selectBg }}>PowerLeave</option>
                           <option value="governai" style={{ background: selectBg }}>GOVERN.AI</option>
+                          <option value="agent-aier" style={{ background: selectBg }}>agentAIer</option>
                           <option value="both" style={{ background: selectBg }}>{t("contact.form.interest.both")}</option>
                           <option value="other" style={{ background: selectBg }}>{t("contact.form.interest.other")}</option>
                         </select>
