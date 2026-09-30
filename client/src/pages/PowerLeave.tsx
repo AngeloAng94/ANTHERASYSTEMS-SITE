@@ -15,6 +15,7 @@ import {
   Check,
 } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import ProductLogo from "@/components/ProductLogo";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -133,7 +134,12 @@ export default function PowerLeave() {
           <div className="max-w-4xl">
             <AnimatedSection>
               <span className="inline-flex items-center gap-3 mb-6 flex-wrap">
-                <img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-12 w-auto rounded-lg" />
+                <ProductLogo
+                  src="/products/powerleave.svg"
+                  alt="PowerLeave"
+                  className="h-12 w-auto rounded-lg"
+                  fallback={<img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-12 w-auto rounded-lg" />}
+                />
                 <span className="font-mono-brand text-[11px] tracking-wider text-[#3b82f6] bg-[#3b82f6]/10 px-3 py-1.5 rounded-md border border-[#3b82f6]/20">
                   ANTHERA POWERLEAVE
                 </span>

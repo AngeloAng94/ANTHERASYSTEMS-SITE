@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Shield, Zap, CheckCircle, Users, GraduationCap, Bot } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import ProductLogo from "@/components/ProductLogo";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -108,6 +109,12 @@ export default function Home() {
               <Link href="/govern-ai" className="px-8 py-3.5 rounded-lg font-display font-semibold text-sm border border-[#3b82f6]/40 text-[#3b82f6] hover:bg-[#3b82f6]/10 transition-colors inline-block">
                 {t("home.hero.cta2")}
               </Link>
+              <Link href="/antheralearn" className="px-8 py-3.5 rounded-lg font-display font-semibold text-sm border border-[#06b6d4]/40 text-[#06b6d4] hover:bg-[#06b6d4]/10 transition-colors inline-block">
+                {t("home.hero.cta3")}
+              </Link>
+              <Link href="/agent-aier" className="px-8 py-3.5 rounded-lg font-display font-semibold text-sm border border-[#10b981]/40 text-[#10b981] hover:bg-[#10b981]/10 transition-colors inline-block">
+                {t("home.hero.cta4")}
+              </Link>
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.8 }}
@@ -172,7 +179,12 @@ export default function Home() {
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#3b82f6] bg-[#3b82f6]/10 px-3 py-1.5 rounded-md">{t("home.products.pl.tag")}</span>
                     </div>
                     <div className="flex items-center gap-3 mb-4">
-                      <img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-14 w-auto rounded-lg" />
+                      <ProductLogo
+                        src="/products/powerleave.svg"
+                        alt="PowerLeave"
+                        className="h-14 w-auto rounded-lg"
+                        fallback={<img src={POWERLEAVE_LOGO} alt="PowerLeave" className="h-14 w-auto rounded-lg" />}
+                      />
                       <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.pl.name")}</h3>
                     </div>
                     <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.pl.desc")}</p>
@@ -197,7 +209,12 @@ export default function Home() {
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#6366f1] bg-[#6366f1]/10 px-3 py-1.5 rounded-md">{t("home.products.gov.tag")}</span>
                     </div>
                     <div className="flex items-center gap-3 mb-4">
-                      <img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-14 w-auto rounded-lg" />
+                      <ProductLogo
+                        src="/products/govern-ai.svg"
+                        alt="GOVERN.AI"
+                        className="h-14 w-auto rounded-lg"
+                        fallback={<img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-14 w-auto rounded-lg" />}
+                      />
                       <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.gov.name")}</h3>
                     </div>
                     <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.gov.desc")}</p>
@@ -222,12 +239,19 @@ export default function Home() {
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#06b6d4] bg-[#06b6d4]/10 px-3 py-1.5 rounded-md">{t("home.products.al.tag")}</span>
                     </div>
                     <div className="flex items-center gap-3 mb-4">
-                      <span
-                        className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
-                        style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }}
-                      >
-                        <GraduationCap className="w-7 h-7 text-white" />
-                      </span>
+                      <ProductLogo
+                        src="/products/antheralearn.svg"
+                        alt="AntheraLearn"
+                        className="h-14 w-14 rounded-lg shrink-0 object-contain"
+                        fallback={
+                          <span
+                            className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
+                            style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }}
+                          >
+                            <GraduationCap className="w-7 h-7 text-white" />
+                          </span>
+                        }
+                      />
                       <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.al.name")}</h3>
                     </div>
                     <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.al.desc")}</p>
@@ -252,12 +276,19 @@ export default function Home() {
                       <span className="font-mono-brand text-[11px] tracking-wider text-[#10b981] bg-[#10b981]/10 px-3 py-1.5 rounded-md">{t("home.products.aa.tag")}</span>
                     </div>
                     <div className="flex items-center gap-3 mb-4">
-                      <span
-                        className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
-                        style={{ background: 'linear-gradient(135deg, #10b981, #14b8a6)' }}
-                      >
-                        <Bot className="w-7 h-7 text-white" />
-                      </span>
+                      <ProductLogo
+                        src="/products/agent-aier.svg"
+                        alt="agentAIer"
+                        className="h-14 w-14 rounded-lg shrink-0 object-contain"
+                        fallback={
+                          <span
+                            className="inline-flex items-center justify-center h-14 w-14 rounded-lg shrink-0"
+                            style={{ background: 'linear-gradient(135deg, #10b981, #14b8a6)' }}
+                          >
+                            <Bot className="w-7 h-7 text-white" />
+                          </span>
+                        }
+                      />
                       <h3 className={`font-display font-bold text-xl ${textPrimary}`}>{t("home.products.aa.name")}</h3>
                     </div>
                     <p className={`text-sm leading-relaxed mb-5 ${textSecondary}`}>{t("home.products.aa.desc")}</p>

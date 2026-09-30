@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="530 130 470 400" width="470" height="400">
+  <title>ANTHERA</title>
+  <defs>
+    <linearGradient id="gLeft" x1="770" y1="158" x2="600" y2="505" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D6F3FC"/>
+      <stop offset="0.28" stop-color="#6FC3F6"/>
+      <stop offset="0.62" stop-color="#2F82E0"/>
+      <stop offset="1" stop-color="#0E48B8"/>
+    </linearGradient>
+    <linearGradient id="gArc" x1="598" y1="470" x2="867" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F4BBA"/>
+      <stop offset="0.55" stop-color="#2E86E2"/>
+      <stop offset="1" stop-color="#0A3DA8"/>
+    </linearGradient>
+    <linearGradient id="gRight" x1="800" y1="205" x2="950" y2="510" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3A8DE2"/>
+      <stop offset="0.45" stop-color="#58B6F3"/>
+      <stop offset="0.8" stop-color="#1F68D0"/>
+      <stop offset="1" stop-color="#0D44B4"/>
+    </linearGradient>
+    <linearGradient id="gCore" x1="769" y1="284" x2="735" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7CCBF8"/>
+      <stop offset="0.5" stop-color="#3C95E6"/>
+      <stop offset="1" stop-color="#1552C4"/>
+    </linearGradient>
+    <linearGradient id="gSilver" x1="0" y1="583" x2="0" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2F5F9"/>
+      <stop offset="0.55" stop-color="#D5DCE5"/>
+      <stop offset="1" stop-color="#A9B4C3"/>
+    </linearGradient>
+    <linearGradient id="gSheen" x1="0" y1="396" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A8DCFB" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#A8DCFB" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gBg" cx="768" cy="420" r="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0E1428"/>
+      <stop offset="1" stop-color="#070A16"/>
+    </radialGradient>
+  </defs>
+  <g id="mark">
+    <path d="M742,185 C715,245 680,310 637,375 C612,412 588,445 563,478 C552,493 575,513 598,502 C660,468 740,440 805,440 C830,441 850,447 867,455 L822,395 C760,392 690,405 638,435 C680,370 740,280 787,178 C796,158 772,152 758,158 C750,163 746,172 742,185 Z M641,433 L586,477 L637,441 Z" fill="url(#gLeft)" fill-rule="evenodd"/>
+    <path d="M563,478 C552,493 575,513 598,502 C660,468 740,440 805,440 C830,441 850,447 867,455 L822,395 C760,392 690,405 638,435 L586,477 Z" fill="url(#gArc)"/>
+    <path d="M645,446 C695,420 760,408 818,410 L814,397 C760,394 690,406 638,435 Z" fill="url(#gSheen)"/>
+    <path d="M796,205 L781,247 C800,300 830,370 880,450 C897,475 910,492 920,502 C935,516 963,512 967,495 C970,485 964,477 956,466 C918,412 876,352 846,305 C828,272 810,238 796,205 Z" fill="url(#gRight)"/>
+    <path d="M769,284 C755,315 735,355 710,387 C740,378 780,372 812,374 C795,345 780,315 769,284 Z" fill="url(#gCore)"/>
+  </g>
+</svg>

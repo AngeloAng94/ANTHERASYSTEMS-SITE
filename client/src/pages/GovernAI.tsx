@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import { toast } from "sonner";
 import { Database, Shield, FileText, CheckSquare, MessageSquare, Globe } from "lucide-react";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import ProductLogo from "@/components/ProductLogo";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -64,7 +65,12 @@ export default function GovernAI() {
           <div className="max-w-4xl">
             <AnimatedSection>
               <span className="inline-flex items-center gap-3 mb-6">
-                <img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-12 w-auto rounded-lg" />
+                <ProductLogo
+                  src="/products/govern-ai.svg"
+                  alt="GOVERN.AI"
+                  className="h-12 w-auto rounded-lg"
+                  fallback={<img src={GOVERNAI_LOGO} alt="GOVERN.AI" className="h-12 w-auto rounded-lg" />}
+                />
                 <span className="font-mono-brand text-[11px] tracking-wider text-[#6366f1] bg-[#6366f1]/10 px-3 py-1.5 rounded-md border border-[#6366f1]/20">
                   ANTHERA GOVERN.AI
                 </span>
